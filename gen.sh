@@ -1,3 +1,8 @@
+#!/bin/sh
+if [ ! -f "opencv/CMakeLists.txt" ]; then
+    git submodule update --init --recursive
+fi
+
 if [ ! $VIRTUAL_ENV ]; then
 	echo Not in virtual env
 	exit 1
@@ -13,7 +18,7 @@ cmake \
 	-DBUILD_opencv_java=OFF \
 	\
 	-DCUDA_GENERATION=Auto \
-	-DCUDA_NVCC_FLAGS="-ccbin gcc-5" \
+	-DCUDA_NVCC_FLAGS="-ccbin gcc-6" \
 	\
 	-DPYTHON_DEFAULT_EXECUTABLE=$PYTHON_EXECUTABLE \
 	-DCMAKE_INSTALL_PREFIX=$VIRTUAL_ENV \

@@ -4,7 +4,7 @@ Scripts to build opencv from source in python virtual env
 
 ## build
 
-```
+```sh
 git clone git@github.com:tzing/opencv-venv.git --recursive
 cd opencv-venv
 source <path-to-venv>/bin/activate
@@ -15,7 +15,7 @@ make install
 
 ## clean
 
-```
+```sh
 git clean -dxf
 ```
 
